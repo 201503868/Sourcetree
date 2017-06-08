@@ -194,7 +194,17 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_ReversaActionPerformed
 
     private void Regla3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Regla3ActionPerformed
-       
+        if (!Entrada1.getText().equals("") && !Entrada2.getText().equals("") && !Entrada3.getText().equals("")){
+        try{
+             Resultado.setText(calculoRegla3(Double.parseDouble(Entrada1.getText()), Double.parseDouble(Entrada2.getText()), Double.parseDouble(Entrada3.getText())));
+        }   
+        catch(Exception e){
+            Resultado.setText("Los campos no son validos");
+        }
+        }
+        else{
+            Resultado.setText("Los campos estan vacios");
+        }
     }//GEN-LAST:event_Regla3ActionPerformed
 
     
@@ -248,6 +258,11 @@ public class Interfaz extends javax.swing.JFrame {
             reves += palabra.charAt(contador);
         }
         return reves;
+    }
+    
+    public String calculoRegla3(double A, double X, double B){
+        double resultado = X*B/A; // A:X::B:Y
+        return String.valueOf(resultado);
     }
     /**
      * @param args the command line arguments

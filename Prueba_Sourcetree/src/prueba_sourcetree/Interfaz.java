@@ -185,7 +185,12 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_VocalesActionPerformed
 
     private void ReversaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReversaActionPerformed
-       
+       if (!Entrada1.getText().equals("") && !Entrada2.getText().equals("")){
+       Resultado.setText(calculoReversa(Entrada1.getText()) + " " + calculoReversa(Entrada2.getText()));  
+        }
+        else{
+            Resultado.setText("Los campos estan vacios");
+       }      
     }//GEN-LAST:event_ReversaActionPerformed
 
     private void Regla3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Regla3ActionPerformed
@@ -235,6 +240,14 @@ public class Interfaz extends javax.swing.JFrame {
         }    
         
         return "Cumple";
+    }
+    
+    public String calculoReversa(String palabra){
+        String reves = "";
+        for(int contador=palabra.length()-1;contador>=0;contador--){
+            reves += palabra.charAt(contador);
+        }
+        return reves;
     }
     /**
      * @param args the command line arguments

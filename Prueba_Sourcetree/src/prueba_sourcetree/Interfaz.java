@@ -5,6 +5,7 @@
  */
 package prueba_sourcetree;
 
+import java.text.Normalizer;
 import javax.swing.UIManager;
 
 /**
@@ -180,7 +181,7 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_HipotenusaActionPerformed
 
     private void VocalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VocalesActionPerformed
-      
+       Resultado.setText(calculoVocales(Entrada1.getText()));
     }//GEN-LAST:event_VocalesActionPerformed
 
     private void ReversaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReversaActionPerformed
@@ -197,6 +198,43 @@ public class Interfaz extends javax.swing.JFrame {
         double catB= Math.pow(catetoB,2);
         double radicando = catA + catB;
         return String.valueOf(Math.pow(radicando,0.5));
+    }
+    
+    public String calculoVocales(String palabra){
+        String normalizar = Normalizer.normalize(palabra, Normalizer.Form.NFD).replaceAll("[^\\p{ASCII}]", "");
+     
+        String normalizado = normalizar.replaceAll("[^\\p{ASCII}]", "").toLowerCase();
+        System.out.println(normalizado);
+        boolean permiso[]= {false,false,false,false,false};
+        for(int contador=normalizado.length()-1;contador>=0;contador--){
+            int codigo = (int)normalizado.charAt(contador);
+            
+            switch(codigo){
+                case 97:
+                    permiso[0]=true;  //a
+                    break;
+                case 101:
+                    permiso[1]=true;  //e
+                    break;
+                case 105:
+                    permiso[2]=true;  //i
+                    break;
+                case 111:
+                    permiso[3]=true;  //o
+                    break;
+                case 117:
+                    permiso[4]=true;  //u
+                    break;
+            }            
+        }
+                
+        for(int contador=0;contador<permiso.length;contador++){
+            if (!permiso[contador]){
+                return "No Cumple";
+            }
+        }    
+        
+        return "Cumple";
     }
     /**
      * @param args the command line arguments

@@ -186,7 +186,7 @@ public class Interfaz extends javax.swing.JFrame {
 
     private void ReversaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReversaActionPerformed
        if (!Entrada1.getText().equals("") && !Entrada2.getText().equals("")){
-       Resultado.setText(calculoReversa(Entrada1.getText()) + " " + calculoReversa(Entrada2.getText()));  
+       Resultado.setText(calculoReversa(Entrada1.getText()) + " " + calculoReversa(Entrada2.getText()) + " 201503868" );  
         }
         else{
             Resultado.setText("Los campos estan vacios");

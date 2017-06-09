@@ -1,0 +1,13 @@
+Que entiende por "commit"?
+Es una version en determinado momento de tiempo de un proyecto local o externo.
+
+Que entiende por "merge"?
+Union de versiones o ramificaciones dentro de un proyecto.
+
+Cual es la diferencia entre pull y push?
+pull importa una rama o version de un proyecto y lo une a un repositorio local mientras que push exporta una rama o version
+de un proyecto a un repositorio externo.
+
+Como se utilizan las ramas (Branches) en un proyecto?
+es la separación de un proyecto en determinado momento y es trabajado en paralelo a la rama original (master) y puede o no
+unirse a la rama original en un momento posterior. 
